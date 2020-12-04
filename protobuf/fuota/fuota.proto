@@ -30,13 +30,21 @@ enum MulticastGroupType {
     CLASS_C = 1;
 }
 
+message DeploymentDevice {
+    // DevEUI.
+    bytes dev_eui = 1;
+
+    // McRootKey.
+    bytes mc_root_key = 2;
+}
+
 
 message Deployment {
     // Application ID.
     int64 application_id = 1;
 
     // Devices to include in this deployment.
-    repeated bytes dev_euis = 2;
+    repeated DeploymentDevice devices = 2;
 
     // Multicast-group type.
     MulticastGroupType multicast_group_type = 3;

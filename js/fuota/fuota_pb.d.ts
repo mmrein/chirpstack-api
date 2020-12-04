@@ -5,16 +5,42 @@ import * as jspb from "google-protobuf";
 import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
 import * as google_protobuf_duration_pb from "google-protobuf/google/protobuf/duration_pb";
 
+export class DeploymentDevice extends jspb.Message {
+  getDevEui(): Uint8Array | string;
+  getDevEui_asU8(): Uint8Array;
+  getDevEui_asB64(): string;
+  setDevEui(value: Uint8Array | string): void;
+
+  getMcRootKey(): Uint8Array | string;
+  getMcRootKey_asU8(): Uint8Array;
+  getMcRootKey_asB64(): string;
+  setMcRootKey(value: Uint8Array | string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeploymentDevice.AsObject;
+  static toObject(includeInstance: boolean, msg: DeploymentDevice): DeploymentDevice.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: DeploymentDevice, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeploymentDevice;
+  static deserializeBinaryFromReader(message: DeploymentDevice, reader: jspb.BinaryReader): DeploymentDevice;
+}
+
+export namespace DeploymentDevice {
+  export type AsObject = {
+    devEui: Uint8Array | string,
+    mcRootKey: Uint8Array | string,
+  }
+}
+
 export class Deployment extends jspb.Message {
   getApplicationId(): number;
   setApplicationId(value: number): void;
 
-  clearDevEuisList(): void;
-  getDevEuisList(): Array<Uint8Array | string>;
-  getDevEuisList_asU8(): Array<Uint8Array>;
-  getDevEuisList_asB64(): Array<string>;
-  setDevEuisList(value: Array<Uint8Array | string>): void;
-  addDevEuis(value: Uint8Array | string, index?: number): Uint8Array | string;
+  clearDevicesList(): void;
+  getDevicesList(): Array<DeploymentDevice>;
+  setDevicesList(value: Array<DeploymentDevice>): void;
+  addDevices(value?: DeploymentDevice, index?: number): DeploymentDevice;
 
   getMulticastGroupType(): MulticastGroupTypeMap[keyof MulticastGroupTypeMap];
   setMulticastGroupType(value: MulticastGroupTypeMap[keyof MulticastGroupTypeMap]): void;
@@ -80,7 +106,7 @@ export class Deployment extends jspb.Message {
 export namespace Deployment {
   export type AsObject = {
     applicationId: number,
-    devEuisList: Array<Uint8Array | string>,
+    devicesList: Array<DeploymentDevice.AsObject>,
     multicastGroupType: MulticastGroupTypeMap[keyof MulticastGroupTypeMap],
     multicastDr: number,
     multicastPingSlotPeriod: number,
