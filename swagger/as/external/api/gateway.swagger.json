@@ -485,6 +485,11 @@
           "type": "integer",
           "format": "int32",
           "description": "Packets transmitted by the gateway."
+        },
+        "statCount": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Gateway Stats Packets received by the server."
         }
       }
     },

@@ -264,6 +264,9 @@ message GatewayStats {
 
 	// Packets transmitted by the gateway.
 	int32 tx_packets_emitted = 5;
+
+	// Gateway Stats Packets received by the server.
+	int32 stat_count = 6;
 }
 
 message GetGatewayStatsRequest {
