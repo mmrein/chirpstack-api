@@ -216,6 +216,9 @@ message HandleGatewayStatsRequest {
     // Downlink emitted.
     uint32 tx_packets_emitted = 8;
 
+    // Gateway Stats Packets received by the server.
+	int32 stat_count = 10;
+
     // Gateway metadata.
     map<string, string> metadata = 9;
 }

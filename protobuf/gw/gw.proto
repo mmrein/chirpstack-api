@@ -162,6 +162,9 @@ message GatewayStats {
     // Number of downlink packets emitted.
     uint32 tx_packets_emitted = 8;
 
+    // Gateway Stats Packets received by the server.
+	int32 stat_count = 12;
+
     // Additional gateway meta-data.
     map<string, string> meta_data = 10;
 
